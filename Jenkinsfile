@@ -20,6 +20,8 @@ node {
     sshCommand remote: remote, command: 'sudo chmod 777 /home/ubuntu/deployment/agent-install.sh'
     sshCommand remote: remote, command: 'sudo sh /home/ubuntu/deployment/agent-install.sh'
     sshCommand remote: remote, command: 'ls /home/ubuntu/deployment'
+    sshCommand remote: remote, command: 'sudo systemctl status zabbix-agent\n\n'
+    sshCommand remote: remote, command: 'sudo systemctl status zabbix-agent | grep active'
 
 
     }
