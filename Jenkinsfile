@@ -13,10 +13,11 @@ node {
 
     sshCommand remote: remote, command: 'ls'
     sshCommand remote: remote, command: 'sudo pwd'
-    sshCommand remote: remote, command: 'sudo rm -rf agent-install.sh'
+    sshCommand remote: remote, command: 'sudo rm -rf /home/ubuntu/deployment/agent-install.sh'
     sshCommand remote: remote, command: 'sudo chmod 777 /home/ubuntu/deployment'
     sshPut remote: remote, from: 'agent-install.sh', into: '/home/ubuntu/deployment'
     sshCommand remote: remote, command: 'cd deployment/'
+    sshCommand remote: remote, command: 'sudo chmod 777 /home/ubuntu/deployment/agent-install.sh'
     sshCommand remote: remote, command: 'sudo sh /home/ubuntu/deployment/agent-install.sh'
     sshCommand remote: remote, command: 'ls /home/ubuntu/deployment'
 
