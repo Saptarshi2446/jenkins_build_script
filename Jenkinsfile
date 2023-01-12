@@ -14,7 +14,7 @@ node {
     sshCommand remote: remote, command: 'ls'
     sshCommand remote: remote, command: 'sudo pwd'
     sshCommand remote: remote, command: 'sudo chmod 777 /home/ubuntu/deployment'
-    sshPut remote: remote, from: 'pipelinescript.sh', into: '/home/ubuntu/deployment'
+    sshPut remote: remote, from: 'agent-install.sh.sh', into: '/home/ubuntu/deployment'
     sshCommand remote: remote, command: 'ls /home/ubuntu/deployment'
 
 
