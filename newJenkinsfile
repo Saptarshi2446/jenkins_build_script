@@ -20,7 +20,7 @@ node {
                 sshCommand remote: remote, command: 'sudo pwd'    
         }
         }else {
-            sh "echo 'Hello from ${env.BRANCH_NAME} branch!'"
+            sh "echo 'Hello from ${params.OS} branch!'"
         }
       }
     }
