@@ -5,7 +5,7 @@ node {
      
 
       stage('execute') {
-                      if (${params.OS} == 'Ubuntu') 
+                      if ("${params.OS}" == 'Ubuntu') 
                         {
                         withCredentials([sshUserPrivateKey(credentialsId: 'new-ubuntu_pem_file', keyFileVariable: 'identity', passphraseVariable: 'pass', usernameVariable: 'ubuntu')])
                
@@ -20,7 +20,7 @@ node {
                 sshCommand remote: remote, command: 'sudo pwd'    
         }
         }else {
-            sh "echo 'Hello from ${params.OS} branch!'"
+            sh "echo 'Hello from "${params.OS}" branch!'"
         }
       }
     }
