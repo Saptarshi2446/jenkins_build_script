@@ -9,7 +9,7 @@ node {
     remote.user = ubuntu
     remote.identityFile = identity
     remote.name = "ubuntu"
-    remote.host = "65.0.104.53"
+    remote.host = "13.235.245.51"
     remote.allowAnyHosts = true
          
 
