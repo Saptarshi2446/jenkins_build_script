@@ -1,7 +1,5 @@
 def remote = [:]
-remote.name = "ubuntu"
-remote.host = "65.0.104.53"
-remote.allowAnyHosts = true
+
 
 node {
 
@@ -10,6 +8,10 @@ node {
    {
     remote.user = ubuntu
     remote.identityFile = identity
+    remote.name = "ubuntu"
+    remote.host = "65.0.104.53"
+    remote.allowAnyHosts = true
+         
 
     sshCommand remote: remote, command: 'ls'
     sshCommand remote: remote, command: 'sudo pwd'
