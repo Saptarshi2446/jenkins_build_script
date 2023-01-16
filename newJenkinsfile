@@ -1,0 +1,28 @@
+def remote = [:]
+remote.name = "ubuntu"
+remote.host = "13.235.245.51"
+remote.allowAnyHosts = true
+node {
+     parameters {
+     string description: 'Select the server OS', name: 'OS'
+    }
+
+      stage('execute') {
+                     withCredentials([sshUserPrivateKey(credentialsId: 'new-ubuntu_pem_file', keyFileVariable: 'identity', passphraseVariable: 'pass', usernameVariable: 'ubuntu')]) 
+   {
+    remote.user = ubuntu
+    remote.identityFile = identity
+    sshCommand remote: remote, command: 'ls'
+    sshCommand remote: remote, command: 'sudo pwd'
+    sshCommand remote: remote, command: 'sudo rm -rf /home/ubuntu/deployment/agent-install.sh'
+    sshCommand remote: remote, command: 'sudo chmod 777 /home/ubuntu/deployment'
+    sshPut remote: remote, from: '/var/lib/jenkins/workspace/pipeline-execute_script-remote-ssh/agent-install.sh', into: '/home/ubuntu/deployment'
+    sshPut remote: remote, from: 'new-test.py', into: '/home/ubuntu/deployment'
+    sshCommand remote: remote, command: 'cd deployment/'
+    sshCommand remote: remote, command: 'sudo chmod 777 /home/ubuntu/deployment/agent-install.sh'
+    sshCommand remote: remote, command: 'sudo chmod 777 /home/ubuntu/deployment/new-test.py'
+    sshCommand remote: remote, command: 'sudo python3 /home/ubuntu/deployment/new-test.py'
+    
+    }
+  }
+}
