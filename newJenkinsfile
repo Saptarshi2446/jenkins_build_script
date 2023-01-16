@@ -15,6 +15,7 @@ node {
     sshCommand remote: remote, command: 'ls'
     sshCommand remote: remote, command: 'sudo pwd'
     sshCommand remote: remote, command: 'sudo rm -rf /home/ubuntu/deployment/agent-install.sh'
+    sshCommand remote: remote, command: 'sudo rm -rf /home/ubuntu/deployment/new-test.py'
     sshCommand remote: remote, command: 'sudo chmod 777 /home/ubuntu/deployment'
     sshPut remote: remote, from: '/var/lib/jenkins/workspace/pipeline-execute_script-remote-ssh/agent-install.sh', into: '/home/ubuntu/deployment'
     sshPut remote: remote, from: 'new-test.py', into: '/home/ubuntu/deployment'
