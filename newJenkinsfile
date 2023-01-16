@@ -1,4 +1,6 @@
 def remote = [:]
+
+properties([parameters([string(description: 'Select the IP', name: 'IP')])])
 properties([parameters([string(description: 'Select the server OS', name: 'OS')])])
 
 node {
