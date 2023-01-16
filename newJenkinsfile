@@ -1,9 +1,8 @@
 def remote = [:]
+properties([parameters([string(description: 'Select the server OS', name: 'OS')])])
 
 node {
-     parameters {
-     string description: 'Select the server OS', name: 'OS'
-    }
+     
 
       stage('execute') {
                       if (${params.OS} == 'Ubuntu') 
