@@ -6,7 +6,7 @@ node {
     }
 
       stage('execute') {
-                      if ($OS == 'Ubuntu') 
+                      if (${OS} == 'Ubuntu') 
                         {
                         withCredentials([sshUserPrivateKey(credentialsId: 'new-ubuntu_pem_file', keyFileVariable: 'identity', passphraseVariable: 'pass', usernameVariable: 'ubuntu')])
                
