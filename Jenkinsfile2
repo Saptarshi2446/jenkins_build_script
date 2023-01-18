@@ -27,8 +27,12 @@ pipeline {
                 }
             }
         }
-    
-                        stage('script') {
+          stage("Deploy")
+          {
+              steps {
+               
+                script {
+                
                         withCredentials([sshUserPrivateKey(credentialsId: 'new-ubuntu_pem_file', keyFileVariable: 'identity', passphraseVariable: 'pass', usernameVariable: 'ubuntu')])
          {      
          remote.user = ubuntu
@@ -39,6 +43,8 @@ pipeline {
         sshCommand remote: remote, command: 'sudo docker run saptarshi2446/hellowhale:latest'
         sshCommand remote: remote, command: 'sudo docker ps' 
         }
+        }
+        
         }
       } 
     }  
