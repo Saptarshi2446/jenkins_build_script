@@ -6,7 +6,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git url:'https://github.com/sachinj77/myapp1.git', branch:'master'
+        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Saptarshi2446/jenkins_build_script.git']])
       }
     }
     
