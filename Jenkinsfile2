@@ -16,6 +16,17 @@ pipeline {
                     myapp = docker.build("sachinjp/hellowhale:${env.BUILD_ID}")
                 }
             }
+           } 
+             stage("Push image") {
+            steps {
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhublogin') {
+                            myapp.push("latest")
+                            myapp.push("${env.BUILD_ID}")
+                    }
+                }
+            }
         }
+        
       } 
     }  
