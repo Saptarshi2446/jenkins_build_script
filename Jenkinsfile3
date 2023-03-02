@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('CSV') {
+            steps {
+                sh '''
+                    python3 data_upload.py
+                '''
+            }
+        }
+
+
+    }
+}
