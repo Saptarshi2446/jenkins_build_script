@@ -18,7 +18,7 @@ conn = psycopg2.connect(
 
 # Define the time range
 end_time = int(time.time())
-start_time = end_time - 3 * 24 * 60 * 60
+start_time = end_time - 1 * 24 * 60 * 60
 
 # Define the headers for the CSV file
 headers = ['ItemID', 'Clock', 'Value', 'Date', 'HostName', 'HostGroupName', 'NS', 'ItemName', 'Time', 'Month']
