@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 
 # Set the database connection details
 conn = psycopg2.connect(
-    host='3.141.170.249',
+    host='18.191.156.145',
     port='5432',
     dbname='zabbix_db1',
     user='zabbixuser',
@@ -18,7 +18,7 @@ conn = psycopg2.connect(
 
 # Define the time range
 end_time = int(time.time())
-start_time = end_time - 3 * 24 * 60 * 60
+start_time = end_time - 2 * 24 * 60 * 60
 
 # Define the headers for the CSV file
 headers = ['ItemID', 'Clock', 'Value', 'Date', 'HostName', 'HostGroupName', 'NS', 'ItemName', 'Time', 'Month']
