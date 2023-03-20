@@ -7,7 +7,7 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 import glob
 
 # InfluxDB connection details
-client = InfluxDBClient(url="https://eastus-1.azure.cloud2.influxdata.com/", token="W5PsbtVPj8wi6P7B9J33oBAgha5RNVI-gk1fR3f-fkY5DoAeD_k8k21ebf7PWGIodsLHydP4MYm6CqwsTJ99mw==",org="7d380c053f102dc4")
+client = InfluxDBClient(url="http://18.141.191.210:8086", token="BMZHFuL-71SF8s3CFrRHAeszar92OYwxx_BhmQ5ue4Y7NS5oH0sDCP2Vol-iz9pkijt4nSf_eEDxfov1hzAZaA==")
 bucket = "Streamli1"
 
 # Write API instance
@@ -54,4 +54,4 @@ for subdir in subdirs:
                 } 
             ]
             print(json_body)
-            write_api.write(bucket=bucket, org="7d380c053f102dc4", record=json_body)
+            write_api.write(bucket=bucket, org="dadee4434fd794ea", record=json_body)
