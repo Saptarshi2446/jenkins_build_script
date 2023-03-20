@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 
 # Set the database connection details
 conn = psycopg2.connect(
-    host='18.191.156.145',
+    host='13.215.160.249',
     port='5432',
     dbname='zabbix_db1',
     user='zabbixuser',
