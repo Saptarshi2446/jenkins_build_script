@@ -7,7 +7,7 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 import glob
 
 # InfluxDB connection details
-client = InfluxDBClient(url="https://eastus-1.azure.cloud2.influxdata.com/orgs/7d380c053f102dc4", token="W5PsbtVPj8wi6P7B9J33oBAgha5RNVI-gk1fR3f-fkY5DoAeD_k8k21ebf7PWGIodsLHydP4MYm6CqwsTJ99mw==",org="7d380c053f102dc4")
+client = InfluxDBClient(url="https://eastus-1.azure.cloud2.influxdata.com/", token="W5PsbtVPj8wi6P7B9J33oBAgha5RNVI-gk1fR3f-fkY5DoAeD_k8k21ebf7PWGIodsLHydP4MYm6CqwsTJ99mw==",org="7d380c053f102dc4")
 bucket = "Streamli1"
 
 # Write API instance
