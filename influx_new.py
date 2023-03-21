@@ -11,7 +11,7 @@ bucket = "Streamli1"
 write_api = client.write_api(write_options=SYNCHRONOUS)
 
 
-file_path = r'/var/lib/jenkins/workspace/Database_data2/__ Space utilization_Zabbix-Server-Active.csv'
+file_path = r'/var/lib/jenkins/workspace/Database_data2/Mar-2023_15-03-2023.csv'
 
 csvReader = pd.read_csv(file_path)
 
