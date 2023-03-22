@@ -14,7 +14,7 @@ bucket = "Streamli1"
 write_api = client.write_api(write_options=SYNCHRONOUS)
 
 # Parent directory containing subdirectories with CSV files
-csv_dir = "/var/lib/jenkins/workspace/Database_data"
+csv_dir = "/var/lib/jenkins/workspace/File Upload-freestyle"
 
 # Find all subdirectories in the parent directory
 subdirs = [entry for entry in os.scandir(csv_dir) if entry.is_dir()]
