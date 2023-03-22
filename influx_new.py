@@ -5,7 +5,7 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 import glob
 
 
-client = InfluxDBClient(url="http://18.139.221.213:8086", token="BMZHFuL-71SF8s3CFrRHAeszar92OYwxx_BhmQ5ue4Y7NS5oH0sDCP2Vol-iz9pkijt4nSf_eEDxfov1hzAZaA==")
+client = InfluxDBClient(url="http://13.250.36.201:8086", token="BMZHFuL-71SF8s3CFrRHAeszar92OYwxx_BhmQ5ue4Y7NS5oH0sDCP2Vol-iz9pkijt4nSf_eEDxfov1hzAZaA==")
 bucket = "Streamli1"
 
 write_api = client.write_api(write_options=SYNCHRONOUS)
