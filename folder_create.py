@@ -6,10 +6,10 @@ import string
 import shutil
 
 # Define the path where the CSV files are located
-csv_path = "/var/lib/jenkins/workspace/Database_data"
+csv_path = "/var/lib/jenkins/workspace/File Upload-freestyle"
 
 # Define the path where the new folders will be created
-new_folder_path = "/var/lib/jenkins/workspace/Database_data"
+new_folder_path = "/var/lib/jenkins/workspace/File Upload-freestyle"
 
 # Loop through all files in the CSV directory
 for file_name in os.listdir(csv_path):
