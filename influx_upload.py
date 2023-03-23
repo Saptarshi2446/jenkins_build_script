@@ -16,8 +16,11 @@ write_api = client.write_api(write_options=SYNCHRONOUS)
 # Parent directory containing subdirectories with CSV files
 csv_dir = "/var/lib/jenkins/workspace/File Upload-freestyle"
 
-# Find all subdirectories in the parent directory
-subdirs = [entry for entry in os.scandir(csv_dir) if entry.is_dir()]
+
+#subdirs = [entry for entry in os.scandir(csv_dir) if entry.is_dir()]
+# Find all subdirectories in the parent directory except for the one named "NoneNonecsv"
+subdirs = [entry for entry in os.scandir(csv_dir) if entry.is_dir() and entry.name != "NoneNonecsv"]
+
 
 # Loop through each subdirectory
 for subdir in subdirs:
