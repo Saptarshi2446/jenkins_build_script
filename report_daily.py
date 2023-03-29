@@ -28,7 +28,7 @@ LEFT JOIN events r ON r.objectid = problem.objectid AND r.value = 0 AND r.clock 
 LEFT JOIN functions f ON triggers.triggerid = f.triggerid
 LEFT JOIN items i ON f.itemid = i.itemid
 LEFT JOIN hosts ON i.hostid = hosts.hostid
-WHERE problem.object = 0 AND problem.clock > UNIX_TIMESTAMP(DATE_SUB(NOW(), INTERVAL 30 DAY)) AND problem.value = 1
+WHERE problem.object = 0 AND problem.clock > UNIX_TIMESTAMP(DATE_SUB(NOW(), INTERVAL 1 DAY)) AND problem.value = 1
   AND (r.eventid IS NOT NULL OR problem.value = 1)
 ORDER BY start_time DESC;"""
 try:
@@ -44,7 +44,7 @@ try:
         headers = ('objectid', 'start_time', 'problem_description', 'r_eventid', 'end_time', 'duration', 'hostname')
 
         # Open the CSV file for writing and write the headers
-        with open('C:\\Old laptop Copy\\Copy\\datateam\\Test\\New_folder\\Reports\\Monthly\\report{date}.csv', 'w', newline='') as csvfile:
+        with open('/tmp/Daily/report.csv', 'w', newline='') as csvfile:
             writer = csv.writer(csvfile)
             writer.writerow(headers)
 
