@@ -12,13 +12,13 @@ mailjet_api_key = '547fa6ae837634b0e2260b5d95aaf795'
 mailjet_api_secret = 'bc6be0bbf4faa323e695313e7340a0a1'
 
 # Recipient email
-receivers_mail = ['sachin.jp@paramaah.com', 'saptarshi.r@paramaah.com']
-to_email = ", ".join(receivers_mail)
+to_emails = ['saptarshi.r@paramaah.com', 'sachin.jp@paramaah.com']
+
 
 # Create message
 msg = MIMEMultipart()
 msg['From'] = 'sachinjayaprakash07@gmail.com'
-msg['To'] = to_email
+msg['To'] = ', '.join(to_emails)
 msg['Subject'] = 'Test Email with Attachment'
 
 body = 'Hello, this is a test email from Python using Mailjet with an attachment!'
@@ -41,7 +41,7 @@ server = smtplib.SMTP(smtp_server, smtp_port)
 server.starttls()
 server.login(mailjet_api_key, mailjet_api_secret)
 text = msg.as_string()
-server.sendmail(msg['From'], to_email, text)
+server.sendmail(msg['From'], to_emails, text)
 server.quit()
 
 print('Email sent successfully with attachment!')
