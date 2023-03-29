@@ -12,7 +12,7 @@ mailjet_api_key = '547fa6ae837634b0e2260b5d95aaf795'
 mailjet_api_secret = 'bc6be0bbf4faa323e695313e7340a0a1'
 
 # Recipient email
-receivers_mail = ['saptarshi.r@paramaah.com', 'sachin.jp@paramaah.com']
+receivers_mail = ['sachin.jp@paramaah.com', 'saptarshi.r@paramaah.com']
 to_email = ", ".join(receivers_mail)
 
 # Create message
