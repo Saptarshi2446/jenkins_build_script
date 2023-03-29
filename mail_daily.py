@@ -24,7 +24,7 @@ body = 'Hello, this is a test email from Python using Mailjet with an attachment
 msg.attach(MIMEText(body, 'plain'))
 
 # Attach file
-filename = 'C:\\Old laptop Copy\\Copy\\datateam\\Test\\New_folder\\pdf\\__ Free inodes in %_Zabbix-Server-Active (1).csv'
+filename = '/tmp/Daily/report.csv'
 attachment_path = os.path.join(os.getcwd(), filename)
 with open(attachment_path, 'rb') as attachment:
     part = MIMEBase('application', 'octet-stream')
